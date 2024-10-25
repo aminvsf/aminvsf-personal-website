@@ -1,0 +1,28 @@
+name: Production
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        # noinspection UndefinedAction
+        uses: actions/checkout@v4
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y awscli
+      - name: Sync pages folder to bucket
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ vars.AWS_DEFAULT_REGION }}
+        run: |
+          aws s3 sync ./pages/ s3://${{ vars.S3_BUCKET_NAME }} \
+            --delete \
+            --endpoint-url "${{ vars.S3_ENDPOINT_URL }}" \
+            --acl public-read

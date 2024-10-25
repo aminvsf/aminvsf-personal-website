@@ -1,0 +1,40 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="56" name="Python" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="2">
+            <item index="0" class="java.lang.String" itemvalue="environ" />
+            <item index="1" class="java.lang.String" itemvalue="dotenv" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="django.db.models.fields.related.ForeignKey.username" />
+          <option value="django.db.models.fields.related.ForeignKey.get_full_name" />
+          <option value="phonenumber_field.modelfields.PhoneNumberField.as_national" />
+          <option value="object.get_context_data" />
+          <option value="config.utils.forms.BootstrapForm.fields" />
+          <option value="admin_panel.utils.SuperUserRequiredMixin.request" />
+          <option value="admin_panel.utils.AdminPanelPermissionMixin.request" />
+          <option value="admin_panel.utils.AdminPanelMixin.request" />
+          <option value="admin_panel.utils.SuperUserMixin.request" />
+          <option value="admin_panel.utils.CoworkerMixin.request" />
+          <option value="admin_panel.utils.StaffUserMixin.request" />
+          <option value="str.url" />
+          <option value="coworker_panel.utils.CoworkerMixin.request" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
